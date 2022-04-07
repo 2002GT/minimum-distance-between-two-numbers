@@ -1,0 +1,27 @@
+class Solution{
+  public:
+    int minDist(int a[], int n, int x, int y) {
+        // code here
+         int l=-1,r=-1;
+       int m=n;
+       int diff=n;
+       for(int i=0;i<n;i++)
+       {
+           if (a[i]==x)
+           l=i;
+           if (a[i]==y)
+           r=i;
+           if (l>=0 && r>=0)
+           diff = abs(r-l);
+           
+           m=min(diff,m);
+       }
+       if (m==n)
+       return -1;
+       else
+       return m;
+   }
+};
+
+
+        
